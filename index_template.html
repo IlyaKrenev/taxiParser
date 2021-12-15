@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TaxiParser</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=APIKEY" type="text/javascript"></script>
+    <script src="https://yandex.st/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+    <script src="route_panel_control.js" type="text/javascript"></script>
+    <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <img id="point" src="img/pointer.png" alt="T">
+    <div id="adress"></div>
+    <div id="map"></div>
+    <button id="check" class="hide">CHECK</button>
+    <button class="track hide">Отслеживать</button>
+    <div class="trackPopup hide">
+        <div class="trackCancel"><img src="img/cancel.png" alt="X" width="10px" height="10px"></div>
+        <div class="trackDuration">
+            <p>Выберите продолжительность:</p>
+            <select>
+                <option value="5">5 минут</option>
+                <option value="10">10 минут</option>
+                <option value="15">15 минут</option>
+                <option value="20">20 минут</option>
+            </select>
+        </div>
+        <div class="trackSteps">
+            <p>Выберите периодичность попыток:</p>
+            <select>
+                <option value="1">раз в 1 минуту</option>
+                <option value="3">раз в 3 минуты</option>
+                <option value="5">раз в 5 минут</option>
+                <option value="10">раз в 10 минут</option>
+            </select>
+        </div>
+        <div class="trackPrice">
+            <p>Введите желаемую стоимость:</p>
+            <input type="text">
+        </div>
+        <div class="trackBool">
+            <p>Уведомлять только при желаемой стоимости:</p>
+            <input type="checkbox">
+        </div>
+        <div class="trackButton">
+            <button class="trackStart">Отслеживать</button>
+        </div>
+        
+    </div>
+    <button id="Add">Добавить точку</button>
+    <div id="prices" class="hide">
+        <div class = "taxi" id="yt">
+            <label>...</label>
+        </div>
+        <div class = "taxi" id="cm">
+            <label>...</label>
+        </div>
+        <div class = "taxi" id="ub">
+            <label>...</label>
+        </div>
+    </div>
+    <script src="keys.js" type="text/javascript" defer></script>
+    <script src="script.js" type="text/javascript" defer></script>
+</body>
+</html>
